@@ -193,7 +193,7 @@ jobs:
             else
               full_service_version="${service_version}"
             fi
-            svc_without_prefix="$(echo "${svc}" | sed "s|^apps/||")/v"
+            svc_without_prefix="$(echo "${svc}" | sed "s|^apps/||")"
             git tag -a "${svc_without_prefix}/v${full_service_version}" -m "${svc_without_prefix}/v${full_service_version}"
             git push origin "${svc_without_prefix}/v${full_service_version}"
           done
